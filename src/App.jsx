@@ -4,27 +4,88 @@ import mockup_pc from './assets/logifleet_mockup_pc.webp'
 import mockup_mobile from './assets/logifleet_mockup_mobile.webp'
 import quadrant_logo from './assets/quadrant_logo.svg'
 import logifleet_logo from './assets/logifleet_logo.webp'
+import Feature from './components/Feature';
+import { motion } from 'framer-motion';
 
-import Feature from './components/Feature'
+const itemVariants = {
+  hidden: { opacity: 0, y: 20 },
+  visible: { 
+    opacity: 1, 
+    y: 0,
+    transition: {
+      type: "spring",
+      stiffness: 100,
+      damping: 20
+    }
+  },
+};
+
+const containerVariants = {
+  hidden: { opacity: 0 },
+  visible: {
+    opacity: 1,
+    transition: {
+      delayChildren: 0.2, 
+      staggerChildren: 0.1, 
+    },
+  },
+};
+
+const mockupContainerVariants = {
+  hidden: { opacity: 0, x: 50 },
+  visible: {
+    opacity: 1,
+    x: 0,
+    transition: {
+      delayChildren: 0.6,
+      staggerChildren: 0.2,
+    },
+  },
+};
+
+const pcMockupVariants = {
+  hidden: { opacity: 0, scale: 0.95 },
+  visible: { 
+    opacity: 1, 
+    scale: 1,
+    transition: { 
+      type: "spring",
+      stiffness: 80,
+      damping: 15
+    }
+  },
+};
+
+const mobileMockupVariants = {
+  hidden: { opacity: 0, y: 50 },
+  visible: { 
+    opacity: 1, 
+    y: 0,
+    transition: { 
+      type: "spring",
+      stiffness: 80,
+      damping: 15
+    }
+  },
+};
 
 
 function App() {
 
   const features = [
-    {
-      title: 'Monitoreo en tiempo real',
-      description: 'Seguimiento en vivo de inventarios y movimientos dentro del almacén.'
-    },
-    {
-      title: 'Optimización de espacio',
-      description: 'Herramientas para maximizar el uso del espacio disponible.'
-    },
-    {
-      title: 'Reportes personalizados',
-      description: 'Generación de informes detallados según las necesidades del usuario.'
-    },
-  ]
-
+  {
+    title: 'Monitoreo en tiempo real',
+    description: 'Seguimiento en vivo de inventarios y movimientos dentro del almacén.'
+  },
+  {
+    title: 'Optimización de espacio',
+    description: 'Herramientas para maximizar el uso del espacio disponible.'
+  },
+  {
+    title: 'Reportes personalizados',
+    description: 'Generación de informes detallados según las necesidades del usuario.'
+  },
+  ] 
   return (
     <>
       <section
@@ -34,73 +95,99 @@ function App() {
         src={bg}
         className='absolute -z-10 w-full overflow-hidden top-0 left-0 object-cover h-full'
       />
-        <article
+        <motion.article
+          variants={containerVariants}
+          initial="hidden"
+          animate="visible"
           className='flex flex-col gap-2'
         >
-          <img
+          <motion.img
             src={logifleet_logo}
-            className='h-5 w-fit opacity-40'
+            variants={itemVariants}
+            className='h-5 w-fit'
             alt="Logifleet Logo"
           />
-          <h1
+          <motion.h1
+            variants={itemVariants}
             className='text-6xl font-bold text-zinc-600'
           >
             Gestión integral de 
             <span className='text-primary pl-4'>
               almacenes
             </span>
-          </h1>
-          <p
+          </motion.h1>
+          <motion.p
+            variants={itemVariants}
             className='text-zinc-500'
           >
             Visibilidad completa de tu operación con reportes en tiempo real. Identificá cuellos de botella y optimizá recursos al instante.
-          </p>
-          <article
+          </motion.p>
+          <motion.article
+            variants={containerVariants}
             className='flex flex-col gap-4'
           >
-            <h2
+            <motion.h2
+              variants={itemVariants}
               className='font-semibold text-zinc-600'
             >
               Que ofrece Logifleet
-            </h2>
+            </motion.h2>
             {features.map((feature, index) => (
-                <Feature title={feature.title} description={feature.description} index={index} />
+              <Feature key={index} title={feature.title} description={feature.description} index={index} />
             ))}
-          </article>
-          <footer
-            className='flex flex-col gap-2 py-4'
+          </motion.article>
+<motion.footer
+            variants={itemVariants}
+            className='flex flex-col gap-2 py-4 w-full items-center'
           >
-            <button
-              className='bg-primary text-white px-4 py-2 rounded-md text-2xl font-semibold'
+            <motion.div
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+              className='relative w-full rounded-md p-[4px] animate-shine'
+              style={{
+                backgroundImage: 'linear-gradient(90deg, rgba(50, 179, 156, 0.3) 0%, rgba(50, 179, 156, 0.3) 30%, rgba(255, 255, 255, 0.9) 50%, rgba(50, 179, 156, 0.3) 70%, rgba(50, 179, 156, 0.3) 100%)',
+                backgroundSize: '200% 100%',
+              }}
             >
-              Iniciar sesión
-            </button>
-            <button
+              <a
+                className='block bg-primary text-white px-4 py-2 w-full text-center rounded-md text-2xl font-semibold'
+                href="#" target="_blank" rel="noopener noreferrer"
+              >
+                Iniciar sesión
+              </a>
+            </motion.div>
+            <a
               className='text-zinc-300 text-sm'
+              href="https://www.quadrant.com.ar/" target="_blank" rel="noopener noreferrer"
             >
               Ir a Quadrant
-            </button>
-          </footer>
-        </article>
-        <aside
+            </a>
+          </motion.footer>
+        </motion.article>
+        <motion.aside
+          variants={mockupContainerVariants}
+          initial="hidden"
+          animate="visible"
           className='relative px-20'
         >
-          <img
+          <motion.img
+            variants={pcMockupVariants}
             src={mockup_pc}
-            className='mockup_pc'
             alt="Logifleet en PC"
           />
-          <img
+          <motion.img
+            variants={mobileMockupVariants}
             src={mockup_mobile}
             className='absolute bottom-0 right-0 h-3/4'
             alt="Logifleet en móvil"
           />
-        </aside>
-        <footer
+        </motion.aside>
+        <motion.footer
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1, transition: { delay: 1.5, duration: 0.8 } }}
           className='absolute bottom-0 h-10 items-center justify-center left-1/2 z-20 px-4 py-2 text-zinc-400 text-xs flex flex-row'
         >
           <p
-            className=''
           >
             Powered By
           </p>
@@ -114,7 +201,7 @@ function App() {
               alt="Logo de Quadrant"
             />
           </a>
-        </footer>
+        </motion.footer>
       </section>
     </>
   )
