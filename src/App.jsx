@@ -110,7 +110,7 @@ function App() {
           />
           <motion.h1
             variants={itemVariants}
-            className='text-4xl lg:text-6xl font-bold text-zinc-600'
+            className='text-4xl lg:text-5xl xl:text-7xl font-bold text-zinc-600'
           >
             Gestión integral de 
             <span className='text-primary pl-4'>
@@ -119,7 +119,7 @@ function App() {
           </motion.h1>
           <motion.p
             variants={itemVariants}
-            className='text-zinc-500 text-sm lg:text-base'
+            className='text-zinc-500 text-sm lg:text-lg'
           >
             Visibilidad completa de tu operación con reportes en tiempo real. Identificá cuellos de botella y optimizá recursos al instante.
           </motion.p>
@@ -129,7 +129,7 @@ function App() {
           >
             <motion.h2
               variants={itemVariants}
-              className='font-semibold text-sm lg:text-base text-zinc-600'
+              className='font-semibold lg:mt-4 text-sm lg:text-base text-zinc-600'
             >
               Que ofrece Logifleet
             </motion.h2>
