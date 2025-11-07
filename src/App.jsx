@@ -89,12 +89,13 @@ function App() {
   return (
     <>
       <section
-        className='overflow-hidden flex flex-row h-screen items-center justify-center px-8 py-10'
+        className='overflow-hidden flex lg:flex-row flex-col lg:h-screen min-h-screen items-center justify-center px-8 py-10 lg:px-10 relative'
       >
-      <img
-        src={bg}
-        className='absolute -z-10 w-full overflow-hidden top-0 left-0 object-cover h-full'
-      />
+        <img
+          src={bg}
+          className='absolute -z-10 w-full overflow-hidden top-0 left-0 object-cover min-h-full'
+          alt="Fondo de Logifleet"
+        />
         <motion.article
           variants={containerVariants}
           initial="hidden"
@@ -104,12 +105,12 @@ function App() {
           <motion.img
             src={logifleet_logo}
             variants={itemVariants}
-            className='h-5 w-fit'
+            className='h-4 lg:h-5 w-fit'
             alt="Logifleet Logo"
           />
           <motion.h1
             variants={itemVariants}
-            className='text-6xl font-bold text-zinc-600'
+            className='text-4xl lg:text-6xl font-bold text-zinc-600'
           >
             Gestión integral de 
             <span className='text-primary pl-4'>
@@ -118,7 +119,7 @@ function App() {
           </motion.h1>
           <motion.p
             variants={itemVariants}
-            className='text-zinc-500'
+            className='text-zinc-500 text-sm lg:text-base'
           >
             Visibilidad completa de tu operación con reportes en tiempo real. Identificá cuellos de botella y optimizá recursos al instante.
           </motion.p>
@@ -128,7 +129,7 @@ function App() {
           >
             <motion.h2
               variants={itemVariants}
-              className='font-semibold text-zinc-600'
+              className='font-semibold text-sm lg:text-base text-zinc-600'
             >
               Que ofrece Logifleet
             </motion.h2>
@@ -136,7 +137,7 @@ function App() {
               <Feature key={index} title={feature.title} description={feature.description} index={index} />
             ))}
           </motion.article>
-<motion.footer
+          <motion.footer
             variants={itemVariants}
             className='flex flex-col gap-2 py-4 w-full items-center'
           >
@@ -156,23 +157,26 @@ function App() {
                 Iniciar sesión
               </a>
             </motion.div>
-            <a
-              className='text-zinc-300 text-sm'
+            <motion.a
+              whileHover={{ scale: 1.05, color: '#32B39C' }}
+              whileTap={{ scale: 0.95 }}
+              className='text-zinc-300 text-sm hover:font-semibold transition-all duration-200'
               href="https://www.quadrant.com.ar/" target="_blank" rel="noopener noreferrer"
             >
               Ir a Quadrant
-            </a>
+            </motion.a>
           </motion.footer>
         </motion.article>
         <motion.aside
           variants={mockupContainerVariants}
           initial="hidden"
           animate="visible"
-          className='relative px-20'
+          className='relative sm:h-fit px-0 lg:h-auto sm:px-20'
         >
           <motion.img
             variants={pcMockupVariants}
             src={mockup_pc}
+            className='h-full'
             alt="Logifleet en PC"
           />
           <motion.img
@@ -185,10 +189,9 @@ function App() {
         <motion.footer
           initial={{ opacity: 0 }}
           animate={{ opacity: 1, transition: { delay: 1.5, duration: 0.8 } }}
-          className='absolute bottom-0 h-10 items-center justify-center left-1/2 z-20 px-4 py-2 text-zinc-400 text-xs flex flex-row'
+          className='lg:absolute relative bottom-0 lg:h-10 h-auto mt-8 lg:mt-0 items-center justify-center lg:left-1/2 lg:-translate-x-1/2 z-20 px-4 py-2 text-zinc-400 text-xs flex flex-row'
         >
-          <p
-          >
+          <p>
             Powered By
           </p>
           <a
