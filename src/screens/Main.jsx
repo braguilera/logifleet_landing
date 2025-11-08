@@ -104,7 +104,7 @@ function Main() {
           <motion.img
             src={logifleet_logo}
             variants={itemVariants}
-            className='h-4 lg:h-5 w-fit'
+            className='h-5 w-fit'
             alt="Logifleet Logo"
           />
           <motion.h1
@@ -170,7 +170,7 @@ function Main() {
           variants={mockupContainerVariants}
           initial="hidden"
           animate="visible"
-          className='relative sm:h-fit px-0 lg:h-auto sm:px-20'
+          className='relative h-1/2 sm:h-fit px-0 lg:h-auto sm:px-20'
         >
           <motion.img
             variants={pcMockupVariants}
