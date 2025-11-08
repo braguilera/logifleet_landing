@@ -175,13 +175,13 @@ function Main() {
           <motion.img
             variants={pcMockupVariants}
             src={mockup_pc}
-            className='h-full'
+            className='h-2/4 lg:h-full'
             alt="Logifleet en PC"
           />
           <motion.img
             variants={mobileMockupVariants}
             src={mockup_mobile}
-            className='absolute bottom-0 right-0 h-3/4'
+            className='absolute bottom-0 right-0 h-3/4 lg:h-3/4'
             alt="Logifleet en móvil"
           />
         </motion.aside>
