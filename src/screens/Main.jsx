@@ -175,7 +175,7 @@ function Main() {
           <motion.img
             variants={pcMockupVariants}
             src={mockup_pc}
-            className='h-1/4 lg:h-full'
+            className='h-52 lg:h-full'
             alt="Logifleet en PC"
           />
           <motion.img
