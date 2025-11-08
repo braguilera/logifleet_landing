@@ -104,7 +104,7 @@ function Main() {
           <motion.img
             src={logifleet_logo}
             variants={itemVariants}
-            className='h-5 w-fit'
+            className='h-7 w-fit'
             alt="Logifleet Logo"
           />
           <motion.h1
