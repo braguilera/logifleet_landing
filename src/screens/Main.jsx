@@ -170,7 +170,7 @@ function Main() {
           variants={mockupContainerVariants}
           initial="hidden"
           animate="visible"
-          className='relative h-1/2 sm:h-fit px-0 lg:h-auto sm:px-20'
+          className='relative h-1/4 sm:h-fit px-0 lg:h-auto sm:px-20'
         >
           <motion.img
             variants={pcMockupVariants}
