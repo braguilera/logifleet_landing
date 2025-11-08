@@ -181,7 +181,7 @@ function Main() {
           <motion.img
             variants={mobileMockupVariants}
             src={mockup_mobile}
-            className='absolute bottom-0 right-0 h-1/4 lg:h-3/4'
+            className='absolute bottom-0 right-0 h-2/4 lg:h-3/4'
             alt="Logifleet en móvil"
           />
         </motion.aside>
