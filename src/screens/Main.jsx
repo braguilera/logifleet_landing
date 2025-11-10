@@ -141,9 +141,9 @@ function Main() {
             className='flex flex-col gap-2 py-4 w-full items-center'
           >
             <motion.div
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
-              className='relative w-full rounded-md p-[4px] animate-shine'
+              whileHover={{ scale: 1.03 }}
+              whileTap={{ scale: 0.99 }}
+              className='relative w-full rounded-md p-[4px] animate-shine transition-all duration-200'
               style={{
                 backgroundImage: 'linear-gradient(90deg, rgba(50, 179, 156, 0.3) 0%, rgba(50, 179, 156, 0.3) 30%, rgba(255, 255, 255, 0.9) 50%, rgba(50, 179, 156, 0.3) 70%, rgba(50, 179, 156, 0.3) 100%)',
                 backgroundSize: '200% 100%',
@@ -157,9 +157,17 @@ function Main() {
               </a>
             </motion.div>
             <motion.a
-              whileHover={{ scale: 1.05, color: '#32B39C' }}
+              className='border-2 cursor-pointer border-primary rounded-md w-full text-center py-2 px-4 text-primary font-semibold hover:bg-primary hover:text-white transition-all duration-200'
+              href="#" target="_blank" rel="noopener noreferrer"
+
+              whileTap={{ scale: 0.99 }}
+            >
+              Descargar Logifleet
+            </motion.a>
+            <motion.a
+              whileHover={{ scale: 1.03, color: '#32B39C' }}
               whileTap={{ scale: 0.95 }}
-              className='text-zinc-300 text-sm hover:font-semibold transition-all duration-200'
+              className='text-primary underline text-sm hover:font-semibold transition-all duration-200'
               href="https://www.quadrant.com.ar/" target="_blank" rel="noopener noreferrer"
             >
               Ir a Quadrant
